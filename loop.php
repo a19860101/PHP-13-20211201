@@ -13,3 +13,5 @@ while($j < 3){
     echo $j.'while!!';
     echo '<br>';
 }
+
+//foreach 陣列迴圈
