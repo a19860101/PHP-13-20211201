@@ -46,6 +46,10 @@
             <input type="checkbox" name="skill[]" value="影視剪輯">
             <label for="">影視剪輯</label>
         </div>
+        <div>
+            <label for="">內容</label>
+            <textarea name="content" id="" cols="30" rows="10"></textarea>
+        </div>
         <input type="submit">
     </form>
     <hr>

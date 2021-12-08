@@ -16,7 +16,10 @@
     //     echo '<br>';
     //     echo $_POST['mail'];
     // }
-    extract($_POST);
+    // extract($_POST);
+    extract($_REQUEST);
+    echo $_REQUEST['name'];
+
     echo $name;
     echo '<br>';
     echo $mail;
@@ -28,7 +31,15 @@
     echo $edu;
     echo '<br>';
     echo implode(',',$skill);
+    echo '<br>';
+    echo $content;
        
+    // var_dump($_POST);
+    // var_dump($_REQUEST);
+
+    // header('refresh:5;url=form.php');
+
+    header('location:form.php');
         
        
     
