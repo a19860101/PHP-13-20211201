@@ -21,17 +21,22 @@
     // echo $_REQUEST['name'];
 
     // echo trim($name);
-    var_dump(trim($name));
+    // var_dump(trim($name));
     // var_dump(stripslashes($name));
     // var_dump(htmlspecialchars($name));//< > " ' &
     // var_dump(ctype_space($name));
-    if(cctype_spae($name)){
-        echo "只有空格";
-    }else{
-        echo "正常";
+  
+    function check($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
 
+    $name = check($name);
     var_dump($name);
+
+    // var_dump($name);
     // echo '<br>';
     // echo $mail;
     // echo '<br>';
