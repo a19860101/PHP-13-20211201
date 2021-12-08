@@ -56,17 +56,33 @@
         $data = htmlspecialchars($data);
         return $data;
     }
-       
+    $error = [];
     extract($_REQUEST);
     if(empty($name) || ctype_space($name)){
-        echo 'name欄位必填';    
+        $error['name'] = 'name欄位必填';
+        // echo 'name欄位必填';    
     }else{
         $name = check($name);
         echo $name;
     }
     if(empty($mail) || ctype_space($mail)){
-        echo 'mail欄位必填';    
+        $error['mail'] = 'mail欄位必填';   
+        // echo 'mail欄位必填'; 
     }else{
         $mail = check($mail);
         echo $mail;
     }
+    $phone = check($phone);
+    $skill = implode(',',$skill);
+    $content = check($content);
+    echo "
+        <div>
+            <div>姓名:{$name}</div>
+            <div>MAIL:{$mail}</div>
+            <div>電話:{$phone}</div>
+            <div>性別:{$gender}</div>
+            <div>學歷:{$edu}</div>
+            <div>專長:{$skill}</div>
+            <div>內容:{$content}</div>
+        </div>
+    ";
