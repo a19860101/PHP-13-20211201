@@ -18,28 +18,33 @@
     // }
     // extract($_POST);
     extract($_REQUEST);
-    echo $_REQUEST['name'];
+    // echo $_REQUEST['name'];
 
-    echo $name;
-    echo '<br>';
-    echo $mail;
-    echo '<br>';
-    echo $phone;
-    echo '<br>';
-    echo $gender;
-    echo '<br>';
-    echo $edu;
-    echo '<br>';
-    echo implode(',',$skill);
-    echo '<br>';
-    echo $content;
+    // echo trim($name);
+    var_dump(trim($name));
+    // echo '<br>';
+    // echo $mail;
+    // echo '<br>';
+    // echo $phone;
+    // echo '<br>';
+    // echo $gender;
+    // echo '<br>';
+    // echo $edu;
+    // echo '<br>';
+    // echo implode(',',$skill);
+    // echo '<br>';
+    // echo $content;
        
     // var_dump($_POST);
     // var_dump($_REQUEST);
 
+    
+    
+    
+    
     // header('refresh:5;url=form.php');
 
-    header('location:form.php');
+    // header('location:form.php');
         
        
     
