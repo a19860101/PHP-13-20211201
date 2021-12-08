@@ -22,6 +22,16 @@
 
     // echo trim($name);
     var_dump(trim($name));
+    // var_dump(stripslashes($name));
+    // var_dump(htmlspecialchars($name));//< > " ' &
+    // var_dump(ctype_space($name));
+    if(cctype_spae($name)){
+        echo "只有空格";
+    }else{
+        echo "正常";
+    }
+
+    var_dump($name);
     // echo '<br>';
     // echo $mail;
     // echo '<br>';
