@@ -26,6 +26,8 @@
     echo $gender;
     echo '<br>';
     echo $edu;
+    echo '<br>';
+    echo implode(',',$skill);
        
         
        

@@ -37,6 +37,15 @@
                 <option value="大專院校">大專院校</option>
             </select>
         </div>
+        <div>
+            <label for="">專長</label>
+            <input type="checkbox" name="skill[]" value="平面設計">
+            <label for="">平面設計</label>
+            <input type="checkbox" name="skill[]" value="網頁設計">
+            <label for="">網頁設計</label>
+            <input type="checkbox" name="skill[]" value="影視剪輯">
+            <label for="">影視剪輯</label>
+        </div>
         <input type="submit">
     </form>
     <hr>
