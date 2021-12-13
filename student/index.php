@@ -34,20 +34,28 @@
 </head>
 <body>
     <h1>學員列表</h1>
+    <a href="create.php">新增資料</a>
     <table>
         <tr>
             <th>姓名</th>
             <th>Mail</th>
             <th>連絡電話</th>
         </tr>
+        <?php foreach($datas as $data){ ?>
+        <tr>
+            <td><?php echo $data['name']; ?></td>
+            <td><?php echo $data['mail']; ?></td>
+            <td><?php echo $data['phone']; ?></td>
+        </tr>
+        <?php } ?>
     <?php
-        foreach($datas as $data){
-            echo "<tr>";
-            echo "<td>{$data['name']}</td>";
-            echo "<td>{$data['mail']}</td>";
-            echo "<td>{$data['phone']}</td>";
-            echo "</tr>";
-        }
+        // foreach($datas as $data){
+        //     echo "<tr>";
+        //     echo "<td>{$data['name']}</td>";
+        //     echo "<td>{$data['mail']}</td>";
+        //     echo "<td>{$data['phone']}</td>";
+        //     echo "</tr>";
+        // }
     ?>
     </table>
 </body>
