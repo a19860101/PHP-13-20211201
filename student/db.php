@@ -7,3 +7,5 @@
     //方法一
     // $db = @mysqli_connect($db_host,$db_user,$db_pw,$db_name) or die('資料庫連線錯誤!');
     $db = mysqli_connect($db_host,$db_user,$db_pw,$db_name) or die('資料庫連線錯誤!');
+
+    mysqli_query($db,'SET NAMES utf8');
