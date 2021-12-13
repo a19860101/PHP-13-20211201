@@ -3,6 +3,12 @@
     // include_once();
     // require();
     // require_once();
+
+    $sql = 'SELECT * FROM students';
+    // $result = mysqli_query($db,'SELECT * FROM students');
+    $result = mysqli_query($db,$sql);
+
+    print_r($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
