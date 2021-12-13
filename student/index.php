@@ -40,12 +40,16 @@
             <th>姓名</th>
             <th>Mail</th>
             <th>連絡電話</th>
+            <th>動作</th>
         </tr>
         <?php foreach($datas as $data){ ?>
         <tr>
             <td><?php echo $data['name']; ?></td>
             <td><?php echo $data['mail']; ?></td>
             <td><?php echo $data['phone']; ?></td>
+            <td>
+                <a href="show.php?id=<?php echo $data['id'];?>">檢視</a>
+            </td>
         </tr>
         <?php } ?>
     <?php
