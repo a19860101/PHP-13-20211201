@@ -32,18 +32,18 @@
         </div>
         <div>
             <label for="">性別</label>
-            <input type="radio" name="gender" value="男">
+            <input type="radio" name="gender" value="男" <?php if($data['gender']=='男'){echo 'checked';}?>>
             <label for="">男</label>
-            <input type="radio" name="gender" value="女">
+            <input type="radio" name="gender" value="女" <?php if($data['gender']=='女'){echo 'checked';}?>>
             <label for="">女</label>
         </div>
         <div>
             <label for="">學歷</label>
             <select name="edu" id="">
-                <option value="國小">國小</option>
-                <option value="國中">國中</option>
-                <option value="高中職">高中職</option>
-                <option value="大專院校">大專院校</option>
+                <option value="國小"<?php echo $data['edu'] == '國小'?'selected':''; ?>>國小</option>
+                <option value="國中"<?php echo $data['edu'] == '國中'?'selected':''; ?>>國中</option>
+                <option value="高中職"<?php echo $data['edu'] == '高中職'?'selected':''; ?>>高中職</option>
+                <option value="大專院校"<?php echo $data['edu'] == '大專院校'?'selected':''; ?>>大專院校</option>
             </select>
         </div>
         <div>
@@ -60,6 +60,7 @@
             <textarea name="content" id="" cols="30" rows="10"><?php echo $data['content'];?></textarea>
         </div>
         <input type="submit" value="儲存資料">
+        <input type="button" value="取消" onclick="history.back()">
     </form>
 </body>
 </html>
