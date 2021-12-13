@@ -22,13 +22,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table,td,th {
+            border: 1px solid #777;
+            border-collapse: collapse;
+        }
+        td,th {
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>學員列表</h1>
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>Mail</th>
+            <th>連絡電話</th>
+        </tr>
     <?php
         foreach($datas as $data){
-            print_r($data);
+            echo "<tr>";
+            echo "<td>{$data['name']}</td>";
+            echo "<td>{$data['mail']}</td>";
+            echo "<td>{$data['phone']}</td>";
+            echo "</tr>";
         }
     ?>
+    </table>
 </body>
 </html>
