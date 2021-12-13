@@ -29,6 +29,7 @@
         <input type="hidden" name="id" value="<?php echo $data['id'];?>">
         <input type="submit" value="刪除" onclick="return confirm('確認刪除？')">
     </form>
+    <a href="edit.php?id=<?php echo $data['id'];?>">編輯資料</a>
     <a href="index.php">學員列表</a>
     
 </body>
