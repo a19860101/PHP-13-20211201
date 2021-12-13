@@ -60,17 +60,20 @@
     extract($_REQUEST);
     if(empty($name) || ctype_space($name)){
         $error['name'] = 'name欄位必填';
-        // echo 'name欄位必填';    
+        echo $error['name']; 
+        return;   
     }else{
         $name = check($name);
-        echo $name;
+        // echo $name;
     }
     if(empty($mail) || ctype_space($mail)){
         $error['mail'] = 'mail欄位必填';   
-        // echo 'mail欄位必填'; 
+        // echo 'mail欄位必填';
+        echo $error['mail'] ;
+        return;
     }else{
         $mail = check($mail);
-        echo $mail;
+        // echo $mail;
     }
     $phone = check($phone);
     $skill = implode(',',$skill);
