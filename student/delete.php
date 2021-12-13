@@ -2,4 +2,7 @@
     include('db.php');
     extract($_REQUEST);
 
-    echo $id;
+    $sql = "DELETE FROM students WHERE id = {$id}";
+    mysqli_query($db,$sql);
+
+    header('location:index.php');
