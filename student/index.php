@@ -7,8 +7,13 @@
     $sql = 'SELECT * FROM students';
     // $result = mysqli_query($db,'SELECT * FROM students');
     $result = mysqli_query($db,$sql);
+    // while($row = mysqli_fetch_assoc($result)){
+    //     print_r($row);
+    // }
+   
+    $datas = mysqli_fetch_all($result,MYSQLI_ASSOC);
+    
 
-    print_r($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,5 +25,10 @@
 </head>
 <body>
     <h1>學員列表</h1>
+    <?php
+        foreach($datas as $data){
+            print_r($data);
+        }
+    ?>
 </body>
 </html>
