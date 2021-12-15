@@ -2,10 +2,21 @@
     include('db.php');
     // $id = $_GET['id'];
     extract($_REQUEST);
-    $sql = "SELECT * FROM students WHERE id = {$id}";
+    //方法一
+    // $sql = "SELECT * FROM students WHERE id = {$id}";
 
-    $result = mysqli_query($db,$sql);
-    $data = mysqli_fetch_assoc($result);
+    // $result = mysqli_query($db,$sql);
+    // $data = mysqli_fetch_assoc($result);
+
+    //方法二
+    $sql = "SELECT * FROM students WHERE id = ?";
+    $stmt = $db->prepare($sql);
+    $stmt->bind_param('i',$id);
+    $stmt->execute();
+
+    // $result = $stmt->get_result();
+    // $data = $result->fetch_assoc();
+    $data = $stmt->get_result()->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
