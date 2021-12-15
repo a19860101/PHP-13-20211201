@@ -1,14 +1,14 @@
 <?php
-    include('db.php');
+    include('pdo.php');
     extract($_REQUEST);
-    //方法一
-    // $sql = "DELETE FROM students WHERE id = {$id}";
-    // mysqli_query($db,$sql);
+    
+    try{
 
-    //方法二
-    $sql = "DELETE FROM students WHERE id = ?";
-    $stmt = $db->prepare($sql);
-    $stmt->bind_param('i',$id);
-    $stmt->execute();
+        $sql = "DELETE FROM students WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id]);
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
 
     header('location:index.php');
