@@ -12,10 +12,10 @@
     try {
         $pdo = new PDO($dsn,$db_user,$db_pw);
 
-        $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_SILENT);
+        // $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_SILENT);
         //不主動報錯(預設)
 
-        // $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
         //主動報錯
         
         // $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -25,3 +25,17 @@
         echo $e->getMessage();
     }
     
+
+    // try{
+        $sql = 'SELECT * FROM stuents';
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+
+        $datas = $stmt->fetchAll();
+        var_dump($datas);
+    // }catch(PDOException $e){
+    //     echo $e->getMessage();
+    // }
+
+
