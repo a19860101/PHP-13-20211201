@@ -3,17 +3,27 @@
     // include_once();
     // require();
     // require_once();
-
     $sql = 'SELECT * FROM students';
     // $result = mysqli_query($db,'SELECT * FROM students');
-    $result = mysqli_query($db,$sql);
+    //方法一
+    // $result = mysqli_query($db,$sql);
     // while($row = mysqli_fetch_assoc($result)){
     //     print_r($row);
     // }
    
-    $datas = mysqli_fetch_all($result,MYSQLI_ASSOC);
-    
+    // $datas = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
+    // 方法二
+    // $result = $db->query($sql);
+
+    // $datas = array();
+    // while($row = $result->fetch_assoc()){
+    //     $datas[] = $row;
+    // }
+    
+    // $datas = $result->fetch_all(MYSQLI_ASSOC);
+
+    $datas = $db->query($sql)->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
