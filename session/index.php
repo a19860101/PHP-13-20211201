@@ -5,6 +5,10 @@
         echo '<script>alert("SESSION以記錄!")</script>';
         header('refresh:0;url=index.php');
     }
+    if(isset($_POST['remove'])){
+        session_destroy();
+        header('location:index.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,11 +22,16 @@
     <h1>session</h1>
     <form action="" method="post">
         <input type="text" name="name">
-        <input type="submit" name="add">
+        <input type="submit" name="add" value="新增session">
+    </form>
+    <form action="" method="post">
+        <input type="submit" name="remove" value="移除session">
     </form>
     <?php 
-        if(isset($_SESSION['NAME'])){
+        if($_SESSION){
             echo $_SESSION['NAME'];
+        }else{
+            echo '沒有session';
         }
     ?>
 </body>
