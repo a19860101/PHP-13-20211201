@@ -7,10 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="list.php">圖片列表</a>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="img">
-        <input type="submit" value="上傳檔案">
-    </form>
+    <a href="form.php">上傳圖片</a>
+    <div></div>
+    <?php
+        $imgs = glob('images/*');
+        foreach($imgs as $img){
+    ?>
+    <img src="<?php echo $img; ?>" width="200">
+    <?php } ?>
 </body>
 </html>
