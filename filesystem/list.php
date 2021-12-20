@@ -1,6 +1,9 @@
 <?php
     if(isset($_POST['del'])){
-        echo 'del';
+        // echo $_POST['img'];
+        unlink($_POST['img']);
+        echo '<script>alert("檔案已刪除!")</script>';
+        header('refresh:0;url=list.php');
     }
 ?>
 <!DOCTYPE html>
