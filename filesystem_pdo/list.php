@@ -1,10 +1,13 @@
 <?php
-    if(isset($_POST['del'])){
-        // echo $_POST['img'];
-        unlink($_POST['img']);
-        echo '<script>alert("檔案已刪除!")</script>';
-        header('refresh:0;url=list.php');
-    }
+    include('pdo.php');
+    $sql = 'SELECT * FROM gallery';
+    $datas = $pdo->query($sql)->fetchAll();
+    // if(isset($_POST['del'])){
+    //     // echo $_POST['img'];
+    //     unlink($_POST['img']);
+    //     echo '<script>alert("檔案已刪除!")</script>';
+    //     header('refresh:0;url=list.php');
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,12 +21,9 @@
     <a href="form.php">上傳圖片</a>
     <div></div>
     <?php
-        $imgs = glob('images/*');
-        $imgNum = count($imgs);
-        echo $imgNum == 0 ? '目前無圖片':'';
-        foreach($imgs as $img){
+        foreach($datas as $img){
     ?>
-    <img src="<?php echo $img; ?>" width="200">
+    <img src="images/<?php echo $img['name']; ?>" width="200">
     <form action="" method="post">
         <input type="hidden" name="img" value="<?php echo $img;?>">
         <input type="submit" value="刪除" name="del">
