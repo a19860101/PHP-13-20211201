@@ -5,6 +5,15 @@
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$id]);
     $data = $stmt->fetch();
+    if(isset($_POST['update'])){
+        extract($_REQUEST);
+        echo $original_name;
+        $sql = 'UPDATE gallery SET original_name=? WHERE id = ?';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$original_name,$id]);
+        echo '<script>alert("檔案已更新!")</script>';
+        header('refresh:0;url=list.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +30,8 @@
             <label for="">圖片名稱</label>
             <input type="text" name="original_name" value="<?php echo $data['original_name'];?>">
         </div>
-        <input type="hidden" name="id">
-        <input type="submit" value="儲存">
+        <input type="hidden" name="id" value="<?php echo $data['id'];?>">
+        <input type="submit" value="儲存" name="update">
         <input type="button" value="取消" onclick="history.back()">
     </form>
 </body>

@@ -28,12 +28,14 @@
         foreach($datas as $img){
     ?>
     <img src="images/<?php echo $img['name']; ?>" width="200">
+    <h3><?php echo $img['original_name'];?></h3>
     <a href="edit.php?id=<?php echo $img['id'];?>">編輯</a>
     <form action="" method="post">
         <input type="hidden" name="id" value="<?php echo $img['id'];?>">
         <input type="hidden" name="name" value="<?php echo $img['name'];?>">
         <input type="submit" value="刪除" name="del">
     </form>
+    <hr>
     <?php } ?>
 </body>
 </html>
