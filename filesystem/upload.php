@@ -23,6 +23,14 @@
         header('refresh:0;url=form.php');
         return;
     }
+
+    $target = 'images/'.$fullname;
     if($error == 0){
-        move_uploaded_file($tmp_name,'images/'.$name);
+        if(move_uploaded_file($tmp_name,$target)){
+            echo '<script>alert("上傳成功!")</script>';
+            header('refresh:0;url=form.php');
+        }else{
+            echo '<script>alert("上傳失敗!，請重新上傳")</script>';
+            header('refresh:0;url=form.php');
+        }
     }
