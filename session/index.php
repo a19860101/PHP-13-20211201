@@ -28,6 +28,7 @@
         <input type="submit" name="remove" value="移除session">
     </form>
     <?php 
+    // var_dump($_SESSION);
         if($_SESSION){
             echo $_SESSION['NAME'];
         }else{
