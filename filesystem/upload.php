@@ -7,6 +7,13 @@
     if(!is_dir('images')){
         mkdir('images');
     }
-    if($error == 0){
-        move_uploaded_file($tmp_name,'images/'.$name);
-    }
+    $ext = pathinfo($name,PATHINFO_EXTENSION);
+    // echo $ext;
+    $imgName =md5(time());
+    // $imgName = md5(uniqid());
+
+    $fullname = $imgName.'.'.$ext;
+    echo $fullname;
+    // if($error == 0){
+        // move_uploaded_file($tmp_name,'images/'.$name);
+    // }
