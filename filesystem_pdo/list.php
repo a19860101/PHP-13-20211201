@@ -24,9 +24,11 @@
     <a href="form.php">上傳圖片</a>
     <div></div>
     <?php
+        echo count($datas) == 0 ? '<h3>目前無圖片</h3>':'';
         foreach($datas as $img){
     ?>
     <img src="images/<?php echo $img['name']; ?>" width="200">
+    <a href="edit.php?id=<?php echo $img['id'];?>">編輯</a>
     <form action="" method="post">
         <input type="hidden" name="id" value="<?php echo $img['id'];?>">
         <input type="hidden" name="name" value="<?php echo $img['name'];?>">
