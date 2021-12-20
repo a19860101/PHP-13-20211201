@@ -19,6 +19,8 @@
     <div></div>
     <?php
         $imgs = glob('images/*');
+        $imgNum = count($imgs);
+        echo $imgNum == 0 ? '目前無圖片':'';
         foreach($imgs as $img){
     ?>
     <img src="<?php echo $img; ?>" width="200">
