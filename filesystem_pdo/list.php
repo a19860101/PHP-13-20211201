@@ -2,12 +2,15 @@
     include('pdo.php');
     $sql = 'SELECT * FROM gallery';
     $datas = $pdo->query($sql)->fetchAll();
-    // if(isset($_POST['del'])){
-    //     // echo $_POST['img'];
-    //     unlink($_POST['img']);
-    //     echo '<script>alert("檔案已刪除!")</script>';
-    //     header('refresh:0;url=list.php');
-    // }
+    if(isset($_POST['del'])){
+        extract($_POST);
+        $sql = 'DELETE FROM gallery WHERE id = ?';
+        $stmt = $pdo->prepare($sql);
+        unlink('images/'.$name);
+        $stmt->execute([$id]);
+        echo '<script>alert("檔案已刪除!")</script>';
+        header('refresh:0;url=list.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +28,8 @@
     ?>
     <img src="images/<?php echo $img['name']; ?>" width="200">
     <form action="" method="post">
-        <input type="hidden" name="img" value="<?php echo $img;?>">
+        <input type="hidden" name="id" value="<?php echo $img['id'];?>">
+        <input type="hidden" name="name" value="<?php echo $img['name'];?>">
         <input type="submit" value="刪除" name="del">
     </form>
     <?php } ?>
