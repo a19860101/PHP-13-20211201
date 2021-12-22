@@ -11,7 +11,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">密碼</label>
-                    <input type="password" name="user" class="form-control">
+                    <input type="password" name="pw" class="form-control">
                 </div>
                 <input type="submit" value="申請會員" class="btn btn-primary">
             </form>
