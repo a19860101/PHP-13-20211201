@@ -6,7 +6,8 @@
         header('refresh:0;url=index2.php');
     }
     if(isset($_POST['remove'])){
-        session_destroy();
+        // session_destroy();
+        unset($_SESSION['AUTH']);
         header('location:index2.php');
     }
 ?>
