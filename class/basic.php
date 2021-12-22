@@ -4,6 +4,13 @@
         public $title;
         public $name;
         public $starred;
+
+        public function attack(){
+            return 'Attack';
+        }
+        public function walk(){
+            return 'Walk';
+        }
     }
 
     
@@ -16,10 +23,11 @@
     // var_dump($spiderMan);
 
     echo $spiderMan->title;
+    echo $spiderMan->attack();
 
-    $ironMan = new User;
-    $ironMan->title = '鋼鐵人';
-    $ironMan->name = '東尼史塔克';
-    $ironMan->starred = '小勞勃道尼';
+    // $ironMan = new User;
+    // $ironMan->title = '鋼鐵人';
+    // $ironMan->name = '東尼史塔克';
+    // $ironMan->starred = '小勞勃道尼';
 
-    var_dump($ironMan);
+    // var_dump($ironMan);
