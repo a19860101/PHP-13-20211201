@@ -13,7 +13,7 @@
                     <a class="nav-link" href="login.php">登入</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">登出</a>
+                    <a class="nav-link" href="logout.php">登出</a>
                 </li>
             </ul>
         </div>
