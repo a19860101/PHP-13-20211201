@@ -13,7 +13,7 @@
                 <div class="mb-3">
                     <?php echo $post['content']; ?>
                 </div>
-                <a href="#" class="btn btn-primary btn-sm">繼續閱讀</a>
+                <a href="Post/show.php?id=<?php echo $post['id'];?>" class="btn btn-primary btn-sm">繼續閱讀</a>
                 <span class="float-end mt-3">最後更新時間：<?php echo $post['updated_at'];?></span>
             </div>
         </div>
