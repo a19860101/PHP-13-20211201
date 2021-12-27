@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">新增文章</a>
+                    <a href="Post/create.php" class="nav-link">新增文章</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
