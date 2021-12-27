@@ -2,6 +2,9 @@
 
 class User {
     public $name = 'john';
+    function __construct(){
+        echo 'HELLO!!!!!';
+    }
     function test(){
         return $this->name;
     }
@@ -11,8 +14,11 @@ class User {
     }
 }
 
-// $hulk = new User;
+$hulk = new User;
 // echo $hulk->test2(123);
 // echo $hulk->test2();
 
-echo User::test2();
+// echo User::test2();
+
+$hawkeye = new User;
+$vision = new User;
