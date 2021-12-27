@@ -1,7 +1,8 @@
 <?php
-    namespace Post\Post;
+    namespace Controller\Post;
     
     include(__DIR__.'/../pdo.php');
+    use DB;
     
     class Post extends DB{
         static function store($request){
