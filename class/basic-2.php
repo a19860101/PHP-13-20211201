@@ -1,7 +1,7 @@
 <?php
     class User {
         private $title = 'Spider Man';
-        public $name = 'Peter Parker';
+        protected $name = 'Peter Parker';
         public $starred = 'Tom Holland';
 
         public function attack(){
@@ -11,20 +11,22 @@
             return 'Walk';
         }
         public function test(){
-            return $this->title;
+            return $this->name;
         }
     }
     //繼承
     class UserSkill extends User {
-        
+        public function test2(){
+            return $this->name;
+        }
     }
 
-    $spiderMan = new User;
+    // $spiderMan = new User;
     // echo $spiderMan->title;
-    echo $spiderMan->test();
+    // echo $spiderMan->test();
 
-    // $spiderMan = new UserSkill;
+    $spiderMan = new UserSkill;
     // echo $spiderMan->attack();
     // echo $spiderMan->starred;
-    // echo $spiderMan->test();
+    echo $spiderMan->test2();
     // echo $spiderMan->title;
