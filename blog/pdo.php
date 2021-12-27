@@ -3,12 +3,12 @@
         function __construct(){
             session_start();
         }
-        function now(){
+        static function now(){
             date_default_timezone_set('Asia/Taipei');
             $now = date('Y-m-d H:i:s');
             return $now;
         }
-        function connect(){
+        static function connect(){
             $db_host = 'localhost';
             $db_user = 'admin';
             $db_pw = 'admin';
@@ -18,7 +18,7 @@
             try {
                 $pdo = new PDO($dsn,$db_user,$db_pw);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        
+                return $pdo;
             }catch(PDOException $e){
                 echo $e->getMessage();
             }
