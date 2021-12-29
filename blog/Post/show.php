@@ -8,6 +8,14 @@
     <div class="row justify-content-center">
         <div class="col-8">
             <h2><?php echo $post['title']?></h2>
+            <div>
+                <?php echo $post['content'];?>
+            </div>
+            <a href="#" class="btn btn-primary">文章列表</a>
+            <form action="delete.php" method="post" class="d-inline-block">
+                <input type="hidden" name="id" value="<?php echo $post['id'];?>">
+                <input type="submit" class="btn btn-danger" value="刪除" onclick="return confirm('確認刪除？')">
+            </form>
         </div>
     </div>
 </div>
