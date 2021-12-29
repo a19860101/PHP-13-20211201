@@ -36,9 +36,9 @@
         }
         static function update($request){
             extract($request);
-            $sql = 'UPDATE posts SET title=?,content=?,updated_at=? WHERE id = ?';
+            $sql = 'UPDATE posts SET title=?,category_id=?,content=?,updated_at=? WHERE id = ?';
             $stmt = DB::connect()->prepare($sql);
-            $stmt->execute([$title,$content,DB::now(),$id]);
+            $stmt->execute([$title,$category_id,$content,DB::now(),$id]);
         }
         static function delete($request){
             extract($request);

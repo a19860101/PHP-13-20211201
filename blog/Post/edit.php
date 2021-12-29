@@ -1,6 +1,8 @@
 <?php
     include('../Controller/Post.php');
+
     $post = Controller\Post::edit($_REQUEST);
+
 ?>
 <?php include('../template/header.php');?>
 <?php include('../template/nav.php');?>
@@ -15,6 +17,15 @@
                 <div class="mb-3">
                     <label for="title">文章標題</label>
                     <input type="text" id="title" name="title" class="form-control" value="<?php echo $post['title'];?>">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">文章分類</label>
+                    <select name="category_id" id="" class="form-select">
+                        <option>--請選擇--</option>
+                        <?php foreach($datas as $data){ ?>
+                        <option value="<?php echo $data['id'];?>"><?php echo $data['title'];?></option>
+                        <?php } ?>
+                    </select>
                 </div>
                 <div class="mb-3">
                     <label for="">文章內文</label>
