@@ -1,3 +1,8 @@
+<?php
+    include('../Controller/Category.php');
+
+    $categories = Controller\Category::all();
+?>
 <?php include('../template/header.php');?>
 <?php include('../template/nav.php');?>
 <div class="container">
@@ -22,6 +27,9 @@
         </div>
         <div class="col-4">
             <ul class="list-group">
+                <?php foreach($categories as $category){ ?>
+                <li class="list-group-item"><?php echo $category['title'];?></li>
+                <?php } ?>
             </ul>
         </div>
     </div>
