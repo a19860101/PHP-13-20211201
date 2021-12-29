@@ -21,10 +21,10 @@
         }
         static function store($request){
             extract($request);
-            $sql = 'INSERT INTO posts(title,content,created_at,updated_at)VALUES(?,?,?,?)';
+            $sql = 'INSERT INTO posts(title,category_id,content,created_at,updated_at)VALUES(?,?,?,?,?)';
             $stmt = DB::connect()->prepare($sql);
             $now = DB::now();
-            $stmt->execute([$title,$content,$now,$now]);
+            $stmt->execute([$title,$category_id,$content,$now,$now]);
         }
         static function edit($request){
             extract($request);
