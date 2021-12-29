@@ -16,6 +16,7 @@
                 <input type="hidden" name="id" value="<?php echo $post['id'];?>">
                 <input type="submit" class="btn btn-danger" value="刪除" onclick="return confirm('確認刪除？')">
             </form>
+            <a href="edit.php?id=<?php echo $post['id'];?>" class="btn btn-success">編輯文章</a>
         </div>
     </div>
 </div>

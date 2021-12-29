@@ -26,6 +26,14 @@
             $now = DB::now();
             $stmt->execute([$title,$content,$now,$now]);
         }
+        static function edit($request){
+            extract($request);
+            $sql = 'SELECT * FROM posts WHERE id = ?';
+            $stmt = DB::connect()->prepare($sql);
+            $stmt->execute([$id]);
+            $data = $stmt->fetch();
+            return $data;
+        }
         static function delete($request){
             extract($request);
             $sql = 'DELETE FROM posts WHERE id = ?';
