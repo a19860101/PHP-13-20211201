@@ -2,10 +2,11 @@
     if(!session_id()){
         session_start();
     }
+    $webroot = 'http://localhost/PHP-13-20211201/blog/';
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">Navbar</a>
+        <a class="navbar-brand" href="<?php echo $webroot; ?>index.php">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
