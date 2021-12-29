@@ -1,6 +1,6 @@
 <?php
     include('Controller/Post.php');
-    $posts = Controller\Post\Post::all();
+    $posts = Controller\Post::all();
 ?>
 <?php include('template/header.php'); ?>
 <?php include('template/nav.php'); ?>

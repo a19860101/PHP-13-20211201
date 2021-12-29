@@ -1,6 +1,6 @@
 <?php
     include('../Controller/Post.php');
-    $post = Controller\Post\Post::show($_REQUEST);
+    $post = Controller\Post::show($_REQUEST);
 ?>
 <?php include('../template/header.php'); ?>
 <?php include('../template/nav.php'); ?>
@@ -11,7 +11,7 @@
             <div>
                 <?php echo $post['content'];?>
             </div>
-            <a href="#" class="btn btn-primary">文章列表</a>
+            <a href="../index.php" class="btn btn-primary">文章列表</a>
             <form action="delete.php" method="post" class="d-inline-block">
                 <input type="hidden" name="id" value="<?php echo $post['id'];?>">
                 <input type="submit" class="btn btn-danger" value="刪除" onclick="return confirm('確認刪除？')">

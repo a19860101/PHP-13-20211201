@@ -1,5 +1,5 @@
 <?php
-    namespace Controller\Post;
+    namespace Controller;
     
     include(__DIR__.'/../pdo.php');
     use DB;
