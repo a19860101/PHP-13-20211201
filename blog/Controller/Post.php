@@ -34,6 +34,12 @@
             $data = $stmt->fetch();
             return $data;
         }
+        static function update($request){
+            extract($request);
+            $sql = 'UPDATE posts SET title=?,content=?,updated_at=? WHERE id = ?';
+            $stmt = DB::connect()->prepare($sql);
+            $stmt->execute([$title,$content,DB::now(),$id]);
+        }
         static function delete($request){
             extract($request);
             $sql = 'DELETE FROM posts WHERE id = ?';

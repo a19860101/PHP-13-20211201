@@ -20,6 +20,7 @@
                     <label for="">文章內文</label>
                     <textarea name="content" id="content" cols="30" rows="10" class="form-control"><?php echo $post['content'];?></textarea>
                 </div>
+                <input type="hidden" name="id" value="<?php echo $post['id'];?>">
                 <input type="submit" class="btn btn-primary" value="修改文章">
                 <input type="button" class="btn btn-danger" value="返回" onclick="history.back()">
             </form>
