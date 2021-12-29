@@ -11,7 +11,9 @@
             <div class="border rounded-3 p-3 mb-3">
                 <h2><?php echo $post['title'];?></h2>
                 <div class="mb-3">
-                    <?php echo $post['content']; ?>
+                    <?php 
+                        echo mb_substr(strip_tags($post['content']),0,100); 
+                    ?>...
                 </div>
                 <a href="Post/show.php?id=<?php echo $post['id'];?>" class="btn btn-primary btn-sm">繼續閱讀</a>
                 <span class="float-end mt-3">最後更新時間：<?php echo $post['updated_at'];?></span>
