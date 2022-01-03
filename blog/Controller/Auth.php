@@ -44,11 +44,9 @@
             }
             if($data['pw'] == md5(sha1($pw))){
                 $_SESSION['AUTH'] = $data;
-                echo '<script>alert("登入成功!")</script>';
-                header('refresh:0;url=../index.php');
+                return 0;
             }else{
-                echo '<script>alert("帳號或密碼錯誤!")</script>';
-                header('refresh:0;url=../Auth/login.php');
+                return 1;
             }
         }
     }

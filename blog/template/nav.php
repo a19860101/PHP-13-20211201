@@ -33,7 +33,7 @@
                         <a href="#" class="nav-link"><?php echo $_SESSION['AUTH']['user']?>你好</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="logout.php">登出</a>
+                        <a class="nav-link" href="<?php echo $webroot; ?>Auth/logout.php">登出</a>
                     </li>
                 <?php } ?>
             </ul>
