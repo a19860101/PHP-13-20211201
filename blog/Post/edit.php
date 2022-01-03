@@ -1,8 +1,10 @@
 <?php
     include('../Controller/Post.php');
+    include('../Controller/Category.php');
 
     $post = Controller\Post::edit($_REQUEST);
 
+    $datas = Controller\Category::all();
 ?>
 <?php include('../template/header.php');?>
 <?php include('../template/nav.php');?>

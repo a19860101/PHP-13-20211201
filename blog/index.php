@@ -1,5 +1,5 @@
 <?php
-    include('Controller/Post.php');
+    require_once('Controller/Post.php');
     $posts = Controller\Post::all();
 ?>
 <?php include('template/header.php'); ?>
