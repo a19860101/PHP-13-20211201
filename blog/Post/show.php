@@ -8,6 +8,8 @@
     <div class="row justify-content-center">
         <div class="col-8">
             <h2><?php echo $post['title']?></h2>
+            <div class="mb-3">分類:<?php echo $post['c_title'];?></div>
+            <hr>
             <div>
                 <?php echo $post['content'];?>
             </div>
