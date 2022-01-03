@@ -11,6 +11,7 @@
             <div class="border rounded-3 p-3 mb-3">
                 <h2><?php echo $post['title'];?></h2>
                 <div class="mb-3">分類:<?php echo $post['c_title'];?></div>
+                <div class="mb-3">作者:<?php echo $post['user'];?></div>
                 <div class="mb-3">
                     <?php 
                         echo mb_substr(strip_tags($post['content']),0,100); 
