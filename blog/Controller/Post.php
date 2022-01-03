@@ -7,7 +7,7 @@
     class Post extends DB{
         static function all(){
             // $sql = 'SELECT * FROM posts';
-            $sql = 'SELECT posts.*,users.user,categories.slug,categories.title AS c_title FROM posts LEFT JOIN categories ON posts.category_id = categories.id LEFT JOIN users ON posts.user_id = users.id';
+            $sql = 'SELECT posts.*,users.user,categories.slug,categories.title AS c_title FROM posts LEFT JOIN categories ON posts.category_id = categories.id LEFT JOIN users ON posts.user_id = users.id ORDER BY updated_at DESC';
             $datas = DB::connect()->query($sql)->fetchAll();
             return $datas;
         }

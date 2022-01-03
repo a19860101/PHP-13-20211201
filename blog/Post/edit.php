@@ -25,7 +25,11 @@
                     <select name="category_id" id="" class="form-select">
                         <option>--請選擇--</option>
                         <?php foreach($datas as $data){ ?>
-                        <option value="<?php echo $data['id'];?>"><?php echo $data['title'];?></option>
+                        <option 
+                            value="<?php echo $data['id'];?>"
+                            <?php echo $post['category_id'] ==  $data['id']? 'selected':'';?>>
+                            <?php echo $data['title'];?>
+                            </option>
                         <?php } ?>
                     </select>
                 </div>
