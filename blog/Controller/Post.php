@@ -23,10 +23,12 @@
         }
         static function store($request){
             extract($request);
-            $sql = 'INSERT INTO posts(title,category_id,content,created_at,updated_at)VALUES(?,?,?,?,?)';
+            session_start();
+            $sql = 'INSERT INTO posts(title,category_id,user_id,content,created_at,updated_at)VALUES(?,?,?,?,?,?)';
             $stmt = DB::connect()->prepare($sql);
             $now = DB::now();
-            $stmt->execute([$title,$category_id,$content,$now,$now]);
+            $id = $_SESSION['AUTH']['id'];
+            $stmt->execute([$title,$category_id,$id,$content,$now,$now]);
         }
         static function edit($request){
             extract($request);
