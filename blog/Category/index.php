@@ -3,7 +3,7 @@
     include('../Controller/Auth.php');
 
     $categories = Controller\Category::all();
-    Controller\Auth::access_denied();
+    Controller\Auth::onlyAdmin();
 ?>
 <?php include('../template/header.php');?>
 <?php include('../template/nav.php');?>

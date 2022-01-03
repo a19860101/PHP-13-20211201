@@ -49,11 +49,20 @@
                 return 1;
             }
         }
-        static function access_denied(){
+        static function onlyGuest(){
             session_start();
             $webroot = 'http://localhost/PHP-13-20211201/blog/';
             if(!isset($_SESSION['AUTH'])){
                 header('location:'.$webroot);
+                return;
+            }
+        }
+        static function onlyAdmin(){
+            session_start();
+            $webroot = 'http://localhost/PHP-13-20211201/blog/';
+            if(!isset($_SESSION['AUTH']) || $_SESSION['AUTH']['role'] != 0){
+                echo '<script>alert("您沒有管理權限!")</script>';
+                header('refresh:0;url='.$webroot);
                 return;
             }
         }

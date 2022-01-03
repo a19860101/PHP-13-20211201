@@ -2,7 +2,7 @@
     include('../Controller/Category.php');
     include('../Controller/Auth.php');
     $datas = Controller\Category::all();
-    Controller\Auth::access_denied();
+    Controller\Auth::onlyGuest();
 
     
 ?>
