@@ -12,12 +12,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+                <?php if(isset($_SESSION['AUTH'])){ ?>
                 <li class="nav-item">
                     <a href="<?php echo $webroot; ?>Post/create.php" class="nav-link">新增文章</a>
                 </li>
-                <li class="nav-item">
-                    <a href="<?php echo $webroot; ?>Category/index.php" class="nav-link">分類管理</a>
-                </li>
+                <?php } ?>
+                <?php if(isset($_SESSION['AUTH']) && $_SESSION['AUTH']['role'] == 0){ ?>
+                    <li class="nav-item">
+                        <a href="<?php echo $webroot; ?>Category/index.php" class="nav-link">分類管理</a>
+                    </li>
+                <?php } ?>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <?php if(!isset($_SESSION['AUTH'])){ ?>
