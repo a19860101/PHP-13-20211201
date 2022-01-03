@@ -1,7 +1,9 @@
 <?php
     include('../Controller/Category.php');
+    include('../Controller/Auth.php');
 
     $categories = Controller\Category::all();
+    Controller\Auth::access_denied();
 ?>
 <?php include('../template/header.php');?>
 <?php include('../template/nav.php');?>

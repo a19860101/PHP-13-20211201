@@ -5,7 +5,7 @@
 
     use DB;
     class Auth extends DB{
-        function store($request){
+        static function store($request){
             extract($request);
 
             //檢查有沒有重複的會員名稱
@@ -26,7 +26,7 @@
             $stmt->execute([$user,$pw,$now]);
 
         }
-        function login($request){
+        static function login($request){
             session_start();
             
             extract($request);
@@ -48,5 +48,16 @@
             }else{
                 return 1;
             }
+        }
+        static function access_denied(){
+            session_start();
+            $webroot = 'http://localhost/PHP-13-20211201/blog/';
+            if(!isset($_SESSION['AUTH'])){
+                header('location:'.$webroot);
+                return;
+            }
+        }
+        static function test(){
+            echo 'test';
         }
     }
