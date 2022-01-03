@@ -25,7 +25,7 @@
                     <a class="nav-link" href="<?php echo $webroot; ?>Auth/create.php">申請會員</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">登入</a>
+                    <a class="nav-link" href="<?php echo $webroot; ?>Auth/login.php">登入</a>
                 </li>
                 <?php } ?>
                 <?php if(isset($_SESSION['AUTH'])){ ?>
