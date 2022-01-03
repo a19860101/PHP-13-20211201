@@ -7,14 +7,14 @@
     class Post extends DB{
         static function all(){
             // $sql = 'SELECT * FROM posts';
-            $sql = 'SELECT posts.*,users.*,categories.slug,categories.title AS c_title FROM posts LEFT JOIN categories ON posts.category_id = categories.id LEFT JOIN users ON posts.user_id = users.id';
+            $sql = 'SELECT posts.*,users.user,categories.slug,categories.title AS c_title FROM posts LEFT JOIN categories ON posts.category_id = categories.id LEFT JOIN users ON posts.user_id = users.id';
             $datas = DB::connect()->query($sql)->fetchAll();
             return $datas;
         }
         static function show($request){
             extract($request);
             // $sql = 'SELECT * FROM posts WHERE id = ?';
-            $sql = 'SELECT posts.*,categories.slug,categories.title AS c_title FROM posts LEFT JOIN categories ON posts.category_id = categories.id WHERE posts.id = ?';
+            $sql = 'SELECT posts.*,users.user,categories.slug,categories.title AS c_title FROM posts LEFT JOIN categories ON posts.category_id = categories.id LEFT JOIN users ON posts.user_id = users.id WHERE posts.id = ?';
             $stmt = DB::connect()->prepare($sql);
             $stmt->execute([$id]);
             $data = $stmt->fetch();
