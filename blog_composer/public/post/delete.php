@@ -1,7 +1,6 @@
 <?php
-    include(__DIR__.'/../Controller/Post.php');
-
-    use Controller\Post;
+    require_once('../../vendor/autoload.php');    
+    use Gjun\Blog\Controller\Post;
 
     Post::delete($_REQUEST);
 
