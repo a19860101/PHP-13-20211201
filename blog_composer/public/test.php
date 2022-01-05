@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="test_upload.php" method="post" enctype="muiltipar/form-data">
+    <form action="test_upload.php" method="post" enctype="multipart/form-data">
         <label for="">封面</label>
         <input type="file" name="cover">
 

@@ -6,19 +6,20 @@
     class File extends DB {
         static function upload($img){
             extract($img);
+
         
             if(!is_dir('images')){
                 mkdir('images');
             }
         
-            //副檔名
+        //     //副檔名
             $ext = pathinfo($name,PATHINFO_EXTENSION);
             // echo $ext;
         
-            //檔名
+        //     //檔名
             $imgName =md5(time());
         
-            //完整檔名
+        //     //完整檔名
             $fullname = $imgName.'.'.$ext;
         
             if($ext != 'jpg' && $ext!= 'gif' && $ext !='png' && $ext!='jpeg'){
@@ -27,17 +28,25 @@
                 return;
             }
         
-            //新增資料
+        //     //新增資料
         
             $target = 'images/'.$fullname;
             if($error == 0){
                 if(move_uploaded_file($tmp_name,$target)){
-        
-                    echo '<script>alert("上傳成功!")</script>';
-                    header('refresh:0;url=form.php');
+                    $status = [
+                        'status' => 0,
+                        'statusText' => '上傳成功'
+                    ];
+                    return $status;
+                    // echo '<script>alert("上傳成功!")</script>';
+                    // header('refresh:0;url=form.php');
                 }else{
-                    echo '<script>alert("上傳失敗!，請重新上傳")</script>';
-                    header('refresh:0;url=form.php');
+                    $status = [
+                        'status' => 1,
+                        'statusText' => '上傳失敗'
+                    ];
+                    // echo '<script>alert("上傳失敗!，請重新上傳")</script>';
+                    // header('refresh:0;url=form.php');
                 }
             }
         }
