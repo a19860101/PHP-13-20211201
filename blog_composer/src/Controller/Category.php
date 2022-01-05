@@ -1,9 +1,6 @@
 <?php
-    namespace Controller;
-
-    require_once(__DIR__.'/../pdo.php');
-
-    use DB;
+    namespace Gjun\Blog\Controller;
+    use Gjun\Blog\Config\DB;
 
     class Category extends DB{
         static function all(){
