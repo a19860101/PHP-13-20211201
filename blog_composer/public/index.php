@@ -1,6 +1,5 @@
 <?php
     require_once('../vendor/autoload.php');
-
-    echo Gjun\Blog\Test::go();
-
-    echo Gjun\Blog\Post::all();
+    // echo Gjun\Blog\Config\DB::now();
+    use Gjun\Blog\Config\DB;
+    echo DB::now();
