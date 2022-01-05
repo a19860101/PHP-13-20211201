@@ -1,6 +1,7 @@
 <?php
     namespace Gjun\Blog\Config;
-    
+
+    use PDO;
     class DB {
         function __construct(){
             session_start();
