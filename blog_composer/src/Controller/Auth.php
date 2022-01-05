@@ -1,9 +1,8 @@
 <?php
-    namespace Controller;
+    namespace Gjun\Blog\Controller;
 
-    require_once(__DIR__.'/../pdo.php');
+    use Gjun\Blog\Config\DB;
 
-    use DB;
     class Auth extends DB{
         static function store($request){
             extract($request);

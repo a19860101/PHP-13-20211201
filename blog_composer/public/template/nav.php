@@ -2,7 +2,7 @@
     if(!session_id()){
         session_start();
     }
-    $webroot = 'http://localhost/PHP-13-20211201/blog/';
+    $webroot = 'http://localhost/PHP-13-20211201/blog_composer/public/';
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
     <div class="container-fluid">
@@ -26,10 +26,10 @@
             <ul class="navbar-nav ms-auto">
                 <?php if(!isset($_SESSION['AUTH'])){ ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo $webroot; ?>Auth/create.php">申請會員</a>
+                    <a class="nav-link" href="<?php echo $webroot; ?>auth/create.php">申請會員</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo $webroot; ?>Auth/login.php">登入</a>
+                    <a class="nav-link" href="<?php echo $webroot; ?>auth/login.php">登入</a>
                 </li>
                 <?php } ?>
                 <?php if(isset($_SESSION['AUTH'])){ ?>
