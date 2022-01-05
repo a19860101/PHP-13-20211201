@@ -1,4 +1,5 @@
 <?php
-    include(__DIR__.'/../Controller/Category.php');
-    Controller\Category::delete($_REQUEST);
+    require_once('../../vendor/autoload.php');    
+    use Gjun\Blog\Controller\Category;
+    Category::delete($_REQUEST);
     header('location:index.php');

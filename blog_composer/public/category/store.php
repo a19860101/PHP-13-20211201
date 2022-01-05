@@ -1,6 +1,6 @@
 <?php
-    include(__DIR__.'/../Controller/Category.php');
-
-    Controller\Category::store($_REQUEST);
+    require_once('../../vendor/autoload.php');    
+    use Gjun\Blog\Controller\Category;
+    Category::store($_REQUEST);
 
     header('location:index.php');
