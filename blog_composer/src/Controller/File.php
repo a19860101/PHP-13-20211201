@@ -35,7 +35,9 @@
                 if(move_uploaded_file($tmp_name,$target)){
                     $status = [
                         'status' => 0,
-                        'statusText' => '上傳成功'
+                        'statusText' => '上傳成功',
+                        'name' => $fullname,
+                        'origin' => $name
                     ];
                     return $status;
                     // echo '<script>alert("上傳成功!")</script>';

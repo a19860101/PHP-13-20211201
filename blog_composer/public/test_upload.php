@@ -3,7 +3,7 @@
     use Gjun\Blog\Controller\File;
 
     $result = File::upload($_FILES['cover']);
-
+    echo $result['name'];
     // var_dump($result['status']);
     if($result['status'] == 0){
         // echo '<script>alert('.$result['statusText'].')</script>';

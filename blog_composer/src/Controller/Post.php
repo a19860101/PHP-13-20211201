@@ -1,6 +1,7 @@
 <?php
     namespace Gjun\Blog\Controller;
     use Gjun\Blog\Config\DB;
+    use Gjun\Blog\Controller\File;
 
     class Post extends DB{
         static function all(){
@@ -19,12 +20,13 @@
             return $data;
             
         }
-        static function store($request){
+        static function store($request,$img){
             extract($request);
             session_start();
             $sql = 'INSERT INTO posts(title,category_id,user_id,content,created_at,updated_at)VALUES(?,?,?,?,?,?)';
             $stmt = DB::connect()->prepare($sql);
             $now = DB::now();
+            File::upload($img);
             $id = $_SESSION['AUTH']['id'];
             $stmt->execute([$title,$category_id,$id,$content,$now,$now]);
         }
