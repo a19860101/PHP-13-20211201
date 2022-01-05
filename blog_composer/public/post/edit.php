@@ -1,10 +1,11 @@
 <?php
-    include('../Controller/Post.php');
-    include('../Controller/Category.php');
+    require_once('../../vendor/autoload.php');    
+    use Gjun\Blog\Controller\Post;
+    use Gjun\Blog\Controller\Category;
 
-    $post = Controller\Post::edit($_REQUEST);
+    $post = Post::edit($_REQUEST);
 
-    $datas = Controller\Category::all();
+    $datas = Category::all();
 ?>
 <?php include('../template/header.php');?>
 <?php include('../template/nav.php');?>

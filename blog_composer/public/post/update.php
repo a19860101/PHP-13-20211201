@@ -1,7 +1,8 @@
 <?php
-    include('../Controller/Post.php');
+    require_once('../../vendor/autoload.php');    
+    use Gjun\Blog\Controller\Post;
 
 
-    Controller\Post::update($_REQUEST);
+    Post::update($_REQUEST);
 
     header('location:show.php?id='.$_REQUEST['id']);
