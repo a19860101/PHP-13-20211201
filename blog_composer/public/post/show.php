@@ -1,6 +1,7 @@
 <?php
-    include('../Controller/Post.php');
-    $post = Controller\Post::show($_REQUEST);
+    require_once('../../vendor/autoload.php');    
+    use Gjun\Blog\Controller\Post;   
+    $post = Post::show($_REQUEST);
 ?>
 <?php include('../template/header.php'); ?>
 <?php include('../template/nav.php'); ?>
